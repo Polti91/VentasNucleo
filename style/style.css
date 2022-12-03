@@ -4,16 +4,15 @@
     margin: 0;
     box-sizing: border-box;
   }
-.cent {
+  
+  section {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    height: 800px;
-    width: 400px;
-}
+    margin: 20%;
+  }
 
-section {
-    margin-top: 20px;
-    margin-left: 20px;
-}
+  input {
+    margin-bottom: 8px;
+    width: 200px;
+    height: 20px;
+  }
