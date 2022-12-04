@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto:ital,wght@0,300;0,400;1,100&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/logo-clientes.png" alt="logo-clientes" />
+      </div>
+      <h1>Formulario de registro</h1>
+    </header>
+    <section>
+      <form>
+        <div class="row">
+          <!-- VISTA DESKTOP -->
+          <div class="desktop">
+            <!-- COLUMNA IZQUIERDA----------------------------------------------------------->
+            <div class="col-6">
+              <p>Razón Social:</p>
+              <input
+                type="text"
+                name="RS"
+                id="rs"
+                placeholder="Nucleo IT S.R.L."
+              />
+              <p>Condición frente al IVA:</p>
+              <input
+                type="text"
+                name="IVA"
+                id="iva"
+                placeholder="Responsable inscripto"
+              />
+              <p class="oculto">OCULTO</p>
+              <p>Nombre de fantasía:</p>
+              <input
+                type="text"
+                name="NOMBRE"
+                id="nombre"
+                placeholder="Núcleo IT"
+              />
+              <p>Dirección:</p>
+              <input
+                type="text"
+                name="DIRECCION"
+                id="dire"
+                placeholder="Lavalle 1783"
+              />
+              <p>Provincia:</p>
+              <input
+                type="text"
+                name="PROVINCIA"
+                id="prov"
+                placeholder="Buenos Aires"
+              />
+              <p>Teléfono del local:</p>
+              <input
+                type="text"
+                name="TELLOCAL"
+                id="tellocal"
+                placeholder="(011) 5263-0039"
+              />
+              <p>Mail del local:</p>
+              <input
+                type="text"
+                name="MAILLOCAL"
+                id="maillocal"
+                placeholder="info@nucleoit.com.ar"
+              />
+              <p class="oculto">OCULTO</p>
+              <p>Nombre de conctacto:</p>
+              <input
+                type="text"
+                name="NOMBRECONTACTO"
+                id="namecontacto"
+                placeholder="Juan Perez"
+              />
+              <p>Mail del contacto:</p>
+              <input
+                type="text"
+                name="MAILCONTACTO"
+                id="mailcontacto"
+                placeholder="juan.perez@gmail.com"
+              />
+            </div>
+            <!-- COLUMNA DERECHA---------------------------------------------------------->
+            <div class="col-6">
+              <p>CUIT:</p>
+              <input
+                type="text"
+                name="CUIT"
+                id="cuit"
+                placeholder="99-99999999-9"
+              />
+              <p class="oculto">OCULTO</p>
+              <input
+                class="oculto"
+                type="text"
+                name="CUIT"
+                id="cuit"
+                placeholder="99-99999999-9"
+              />
+              <p class="oculto">OCULTO</p>
+              <input
+                class="oculto"
+                type="text"
+                name="CUIT"
+                id="cuit"
+                placeholder="99-99999999-9"
+              />
+              <p class="oculto">OCULTO</p>
+              <p>Localidad:</p>
+              <input
+                type="text"
+                name="LOCALIDAD"
+                id="loca"
+                placeholder="Balvanera"
+              />
+              <p class="oculto">OCULTO</p>
+              <input
+                class="oculto"
+                type="text"
+                name="CUIT"
+                id="cuit"
+                placeholder="99-99999999-9"
+              />
+              <p>Celular del local:</p>
+              <input
+                type="text"
+                name="CELLOCAL"
+                id="cellocal"
+                placeholder="(011) 3277-7917"
+              />
+              <p>Instagram:</p>
+              <input type="text" name="IG" id="ig" placeholder="/nucleoit" />
+              <p class="oculto">OCULTO</p>
+              <p>Celular de contacto:</p>
+              <input
+                type="text"
+                name="CELCONTACTO"
+                id="celcontacto"
+                placeholder="(011) 3277-7917"
+              />
+            </div>
+          </div>
+          <!-- VISTA MOVIL  -->
+          <div class="movil">
+            <p>Razón Social:</p>
+            <input
+              type="text"
+              name="RS"
+              id="rs"
+              placeholder="Nucleo IT S.R.L."
+            />
+            <p>CUIT:</p>
+            <input
+              type="text"
+              name="CUIT"
+              id="cuit"
+              placeholder="99-99999999-9"
+            />
+            <p>Condición frente al IVA:</p>
+            <input
+              type="text"
+              name="IVA"
+              id="iva"
+              placeholder="Responsable inscripto"
+            />
+            <p class="oculto">OCULTO</p>
+            <p>Nombre de fantasía:</p>
+            <input
+              type="text"
+              name="NOMBRE"
+              id="nombre"
+              placeholder="Núcleo IT"
+            />
+            <p>Dirección:</p>
+            <input
+              type="text"
+              name="DIRECCION"
+              id="dire"
+              placeholder="Lavalle 1783"
+            />
+            <p>Localidad:</p>
+            <input
+              type="text"
+              name="LOCALIDAD"
+              id="loca"
+              placeholder="Balvanera"
+            />
+            <p>Provincia:</p>
+            <input
+              type="text"
+              name="PROVINCIA"
+              id="prov"
+              placeholder="Buenos Aires"
+            />
+            <p>Teléfono del local:</p>
+            <input
+              type="text"
+              name="TELLOCAL"
+              id="tellocal"
+              placeholder="(011) 5263-0039"
+            />
+            <p>Celular del local:</p>
+            <input
+              type="text"
+              name="CELLOCAL"
+              id="cellocal"
+              placeholder="(011) 3277-7917"
+            />
+            <p>Mail del local:</p>
+            <input
+              type="text"
+              name="MAILLOCAL"
+              id="maillocal"
+              placeholder="info@nucleoit.com.ar"
+            />
+            <p>Instagram:</p>
+            <input type="text" name="IG" id="ig" placeholder="/nucleoit" />
+            <p class="oculto">OCULTO</p>
+            <p>Nombre de conctacto:</p>
+            <input
+              type="text"
+              name="NOMBRECONTACTO"
+              id="namecontacto"
+              placeholder="Juan Perez"
+            />
+            <p>Celular de contacto:</p>
+            <input
+              type="text"
+              name="CELCONTACTO"
+              id="celcontacto"
+              placeholder="(011) 3277-7917"
+            />
+            <p>Mail del contacto:</p>
+            <input
+              type="text"
+              name="MAILCONTACTO"
+              id="mailcontacto"
+              placeholder="juan.perez@gmail.com"
+            />
+          </div>
+        </div>
+        <input
+          id="enviar"
+          type="submit"
+          value="Enviar"
+          onclick="enviarinfo()"
+        />
+      </form>
+    </section>
+    <footer></footer>
+    <script type="text/javascript" src="./js/javascript.js"></script>
+  </body>
+</html>
