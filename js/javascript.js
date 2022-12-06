@@ -45,7 +45,7 @@ function enviarinfo(v){
 
 
     if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
-       
+    
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -64,9 +64,8 @@ function enviarinfo(v){
         icon: 'error',
         title: 'Oops...',
         text: 'Debe seleccionar una provincia',
-      }) 
-    else if (!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){
-      
+      })
+    }else if(!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){ 
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
