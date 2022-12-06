@@ -19,6 +19,29 @@ function enviarinfo(v){
     var cuit2=cuit.slice(2, 10);
     var cuit3=cuit.slice(10, 11);
     let cuit4 = cuit1+"-"+cuit2+"-"+cuit3;
+
+
+    function esCUITValida(inputValor) {
+      inputString = inputValor.toString()
+      if (inputString.length == 11) {
+          var Caracters_1_2 = inputString.charAt(0) + inputString.charAt(1)
+          if (Caracters_1_2 == "20" || Caracters_1_2 == "23" || Caracters_1_2 == "24" || Caracters_1_2 == "27" || Caracters_1_2 == "30" || Caracters_1_2 == "33" || Caracters_1_2 == "34") {
+              var Count = inputString.charAt(0) * 5 + inputString.charAt(1) * 4 + inputString.charAt(2) * 3 + inputString.charAt(3) * 2 + inputString.charAt(4) * 7 + inputString.charAt(5) * 6 + inputString.charAt(6) * 5 + inputString.charAt(7) * 4 + inputString.charAt(8) * 3 + inputString.charAt(9) * 2 + inputString.charAt(10) * 1
+              Division = Count / 11;
+              if (Division == Math.floor(Division)) {
+                  return true
+              }
+          }
+      }
+      return false
+  }
+
+
+
+
+
+
+
         
     if (razonsocial=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
       if (iva!="0"){
@@ -27,10 +50,11 @@ function enviarinfo(v){
       else{
         alert("Debe seleccionar la condicion ante el IVA.");
       }
-      
     } else if (!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){
       alert("El formato del mail es incorrecto. El formato debe ser similar a ejemplo@ejemplo.com");
-    } else if (cuit.length<11 || tellocal.length<10 || cellocal.length<10 || celcontacto.length<10){
+    } else if (esCUITValida(cuit) == false){
+      alert("CUIT invalido");   
+    }else if (tellocal.length<10 || cellocal.length<10 || celcontacto.length<10){
       alert("Revise los valores asignados en las lenguetas.");
     }
         else if (v==1) {
