@@ -59,6 +59,12 @@ function enviarinfo(v){
         text: 'Debe seleccionar la condicion ante el IVA.',
       }) 
     }
+    else if(prov=="0"){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debe seleccionar una provincia',
+      }) 
     else if (!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){
       
       Swal.fire({
