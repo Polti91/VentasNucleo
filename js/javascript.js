@@ -20,8 +20,14 @@ function enviarinfo(v){
     var cuit3=cuit.slice(10, 11);
     let cuit4 = cuit1+"-"+cuit2+"-"+cuit3;
         
-    if (razonsocial=="" || cuit=="" || iva=="0" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
-      alert("Debe completar todos los campos.");
+    if (razonsocial=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
+      if (iva!="0"){
+        alert("Debe completar todos los campos.");
+      }
+      else{
+        alert("Debe seleccionar la condicion ante el IVA.");
+      }
+      
     } else if (!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){
       alert("El formato del mail es incorrecto. El formato debe ser similar a ejemplo@ejemplo.com");
     } else if (cuit.length<11 || tellocal.length<10 || cellocal.length<10 || celcontacto.length<10){
