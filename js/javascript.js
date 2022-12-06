@@ -20,7 +20,7 @@ function enviarinfo(v){
     var cuit3=cuit.slice(10, 11);
     let cuit4 = cuit1+"-"+cuit2+"-"+cuit3;
         
-    if (razonsocial=="" || cuit=="" || iva=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
+    if (razonsocial=="" || cuit=="" || iva=="0" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
       alert("Debe completar todos los campos.");
     } else if (!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){
       alert("El formato del mail es incorrecto. El formato debe ser similar a ejemplo@ejemplo.com");
