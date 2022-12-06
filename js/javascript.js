@@ -43,7 +43,7 @@ function enviarinfo(v){
 
 
         
-    if (razonsocial=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
+    if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
       if (iva!="0"){
         alert("Debe completar todos los campos.");
       }

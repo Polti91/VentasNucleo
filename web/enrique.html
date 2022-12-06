@@ -36,15 +36,17 @@
               name="NOMBRE"
               id="nombre"
               placeholder="Núcleo IT"
+              minlength="3"
               required
             />
-            <p>Dirección:</p>
+            <p>Dirección <span>(calle y altura)</span>:</p>
             <input
               type="text"
               name="DIRECCION"
               id="dire"
               placeholder="Lavalle 1783"
               required
+              minlength="4"
             />
             <p>Localidad:</p>
             <input
@@ -64,7 +66,7 @@
             />
             <p>Teléfono del local:</p>
             <input
-              type="text"
+              type="number"
               name="TELLOCAL"
               id="tellocal"
               placeholder="(011) 5263-0039"
@@ -74,13 +76,11 @@
             />
             <p>Celular del local:</p>
             <input
-              type="text"
+              type="number"
               name="CELLOCAL"
               id="cellocal"
               placeholder="(011) 3277-7917"
               required
-              minlength="10"
-              maxlength="10"
             />
             <p>Mail del local:</p>
             <input
@@ -108,22 +108,27 @@
               placeholder="Nucleo IT S.R.L."
               required
             />
-            <p>CUIT:</p>
+            <p>CUIT <span>(sin guiones)</span>:</p>
             <input
               type="number"
               name="CUIT"
               id="cuit"
               placeholder="99-99999999-9"
+              minlength="11"
+              maxlength="11"
               required
             />
             <p>Condición frente al IVA:</p>
             <select name="IVA" id="iva" required>
               <option value="0">Seleccionar...</option>
-              <option value="Responsable Inscripto">Responsable Inscripto</option>
+              <option value="Responsable Inscripto">
+                Responsable Inscripto
+              </option>
               <option value="Monotributista">Monotributista</option>
               <option value="Exento">Exento</option>
             </select>
           </div>
+
           <div>
             <p>Nombre de conctacto:</p>
             <input
@@ -151,7 +156,7 @@
               placeholder="juan.perez@gmail.com"
               required
             />
-          </div>  
+          </div>
           <div>
             <p>Razón Social:</p>
             <input
@@ -161,7 +166,7 @@
               placeholder="Nucleo IT S.R.L."
               required
             />
-          </div>      
+          </div>
         </div>
         <div class="botonenvio">
           <input

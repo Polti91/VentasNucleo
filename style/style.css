@@ -61,7 +61,8 @@ section {
 p {
   font-size: 1em;
 }
-input, select {
+input,
+select {
   margin-bottom: 8px;
   width: 200px;
   height: auto;
@@ -69,9 +70,20 @@ input, select {
   border-radius: 4px;
   padding: 5px;
 }
-select{
+/*Con estos webkit quitamos los botoncitos de los input number*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
   height: auto;
 }
+
 input::placeholder {
   color: rgba(112, 110, 110, 0.794);
   font-family: "Roboto", sans-serif;
@@ -80,8 +92,8 @@ input::placeholder {
 }
 input:focus {
   outline: none;
-  border-color: #75b53d;
-  background: rgb(230, 230, 230);
+  border: solid 2px #75b53d;
+  background-color: #f5f5f5;
 
   font-family: "Roboto", sans-serif;
   font-size: 0.8em;
@@ -103,6 +115,9 @@ input:focus {
   p {
     font-size: 1.3em;
   }
+  span {
+    font-size: 0.8rem;
+  }
   input {
     font-size: 1rem;
     margin-bottom: 8px;
@@ -112,7 +127,7 @@ input:focus {
     border-radius: 4px;
     padding: 5px;
   }
-  select{
+  select {
     height: auto;
     width: 100%;
   }
