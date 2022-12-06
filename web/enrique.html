@@ -117,13 +117,12 @@
               required
             />
             <p>Condición frente al IVA:</p>
-            <input
-              type="text"
-              name="IVA"
-              id="iva"
-              placeholder="Responsable inscripto"
-              required
-            />
+            <select name="IVA" id="iva" required>
+              <option value="0">Seleccionar...</option>
+              <option value="Responsable Inscripto">Responsable Inscripto</option>
+              <option value="Monotributista">Monotributista</option>
+              <option value="Exento">Exento</option>
+            </select>
           </div>
           <div>
             <p>Nombre de conctacto:</p>
