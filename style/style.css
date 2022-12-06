@@ -1,80 +1,56 @@
 * {
-  padding: 0px;
-  border-left: 0px;
   margin: 0;
-  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-.row::after {
-  content: "";
-  clear: both;
-  display: block;
-}
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-}
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 
-.oculto{
+.oculto {
   visibility: hidden;
 }
-.movil{
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: space-around;
+}
+
+.row div {
+  margin: 10px;
+}
+
+.row div:last-child {
+  visibility: hidden;
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
-  }
-  .oculto {
-    display: none;;
-  }
-  p,.oculto{
-    display: block;  
-  }
-  .desktop{
-    display: none;
-  }
-  .movil{
+@media only screen and (max-width: 1145px) {
+  .row div:last-child {
     display: block;
   }
-  
 }
-
 
 body {
   background-color: #f1f2f7;
 }
-.logo{
+.logo {
   text-align: start;
   background-color: #ffffff;
   border-bottom: solid 1px lightgrey;
 }
-header h1{
+header h1 {
   text-align: center;
   margin-top: 2%;
 }
 
 section {
-  background-color: #e6fcd1;
-  display: flex;
+  background-color: #ffffff;
+  min-width: 300px;
   flex-direction: column;
+  justify-content: center;
   margin: 15%;
   margin-top: 2%;
+  margin-bottom: 5%;
   padding-top: 2%;
   justify-content: center;
   justify-items: center;
@@ -86,15 +62,29 @@ section {
 p {
   font-size: 1em;
 }
-input {
-  display: flex;
+input,
+select {
   margin-bottom: 8px;
   width: 200px;
-  height: 20px;
-  border: solid 0.8px;
-  border-radius: 4px;
+  height: auto;
+  border: solid 0.8px darkgrey;
+  border-radius: 3px;
   padding: 5px;
 }
+/*Con estos webkit quitamos los botoncitos de los input number*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  height: auto;
+}
+
 input::placeholder {
   color: rgba(112, 110, 110, 0.794);
   font-family: "Roboto", sans-serif;
@@ -103,35 +93,54 @@ input::placeholder {
 }
 input:focus {
   outline: none;
-  border-color: #75b53d;
-  background: rgb(230, 230, 230);
+  border: solid 2px #75b53d;
+  background-color: #f5f5f5;
 
   font-family: "Roboto", sans-serif;
   font-size: 0.8em;
   font-weight: 300;
 }
-
 .botonenvio {
   display: flex;
   justify-content: center;
+  
 }
-
-#enviar{
+#enviar {
   justify-content: center;
+  background-color: #428BCA;
+  border-color: #3071A9;
+  color: white;
+  border-radius: 1px;
   height: 30px;
   width: 80px;
 }
-
-
-
-
-
-
-
-
-
-
-
+#enviar:hover{
+  background-color: #3276B1;
+}
+@media only screen and (max-width: 632px) {
+  .row div:last-child {
+    display: block;
+  }
+  p {
+    font-size: 1.3em;
+  }
+  span {
+    font-size: 0.8rem;
+  }
+  input {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    border: solid 0.8px darkgrey;
+    width: 240px;
+    height: 30px;
+    border-radius: 3px;
+    padding: 5px;
+  }
+  select {
+    height: auto;
+    width: 100%;
+  }
+}
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -165,4 +174,3 @@ input:focus {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-

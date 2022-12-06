@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <!-- Fuentes-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,202 +30,24 @@
     <section>
       <form>
         <div class="row">
-          <!-- VISTA DESKTOP -->
-          <div class="desktop">
-            <!-- COLUMNA IZQUIERDA----------------------------------------------------------->
-            <div class="col-6">
-              <p>Razón Social:</p>
-              <input
-                type="text"
-                name="RS"
-                id="rs"
-                placeholder="Nucleo IT S.R.L."
-                required
-              />
-              <p>Condición frente al IVA:</p>
-              <input
-                type="text"
-                name="IVA"
-                id="iva"
-                placeholder="Responsable inscripto"
-                required
-              />
-              <p class="oculto">OCULTO</p>
-              <p>Nombre de fantasía:</p>
-              <input
-                type="text"
-                name="NOMBRE"
-                id="nombre"
-                placeholder="Núcleo IT"
-                required
-              />
-              <p>Dirección:</p>
-              <input
-                type="text"
-                name="DIRECCION"
-                id="dire"
-                placeholder="Lavalle 1783"
-                required
-              />
-              <p>Provincia:</p>
-              <input
-                type="text"
-                name="PROVINCIA"
-                id="prov"
-                placeholder="Buenos Aires"
-                required
-              />
-              <p>Teléfono del local:</p>
-              <input
-                type="text"
-                name="TELLOCAL"
-                id="tellocal"
-                placeholder="(011) 5263-0039"
-                required
-                minlength="10"
-                maxlength="10"
-              />
-              <p>Mail del local:</p>
-              <input
-                type="mail"
-                name="MAILLOCAL"
-                id="maillocal"
-                placeholder="info@nucleoit.com.ar"
-                required
-              />
-              <p class="oculto">OCULTO</p>
-              <p>Nombre de conctacto:</p>
-              <input
-                type="text"
-                name="NOMBRECONTACTO"
-                id="namecontacto"
-                placeholder="Juan Perez"
-                required
-              />
-              <p>Mail del contacto:</p>
-              <input
-                type="mail"
-                name="MAILCONTACTO"
-                id="mailcontacto"
-                placeholder="juan.perez@gmail.com"
-                required
-              />
-            </div>
-            <!-- COLUMNA DERECHA---------------------------------------------------------->
-            <div class="col-6">
-              <p>CUIT:</p>
-              <input
-                type="text"
-                name="CUIT"
-                id="cuit"
-                placeholder="99-99999999-9"
-                required
-                minlength="11"
-                maxlength="11"
-              />
-              <p class="oculto">OCULTO</p>
-              <input
-                class="oculto"
-                type="text"
-                name="CUIT"
-                id="cuit"
-                placeholder="99-99999999-9"
-                required
-              />
-              <p class="oculto">OCULTO</p>
-              <input
-                class="oculto"
-                type="text"
-                name="CUIT"
-                id="cuit"
-                placeholder="99-99999999-9"
-                required
-              />
-              <p class="oculto">OCULTO</p>
-              <p>Localidad:</p>
-              <input
-                type="text"
-                name="LOCALIDAD"
-                id="loca"
-                placeholder="Balvanera"
-                required
-              />
-              <p class="oculto">OCULTO</p>
-              <input
-                class="oculto"
-                type="text"
-                name="CUIT"
-                id="cuit"
-                placeholder="99-99999999-9"
-                required
-              />
-              <p>Celular del local:</p>
-              <input
-                type="text"
-                name="CELLOCAL"
-                id="cellocal"
-                placeholder="(011) 3277-7917"
-                required
-                minlength="10"
-                maxlength="10"
-              />
-              <p>Instagram:</p>
-              <input type="text" name="IG" id="ig" placeholder="/nucleoit" required/>
-              <p class="oculto">OCULTO</p>
-              <p>Celular de contacto:</p>
-              <input
-                type="text"
-                name="CELCONTACTO"
-                id="celcontacto"
-                placeholder="(011) 3277-7917"
-                required
-                minlength="10"
-                maxlength="10"
-              />
-            </div>
-          </div>
-          <!-- VISTA MOVIL  -->
-          <div class="movil">
-            <p>Razón Social:</p>
-            <input
-              type="text"
-              name="RS"
-              id="rs"
-              placeholder="Nucleo IT S.R.L."
-              required
-            />
-            <p>CUIT:</p>
-            <input
-              type="text"
-              name="CUIT"
-              id="cuit"
-              placeholder="99-99999999-9"
-              required
-            />
-            <p>Condición frente al IVA:</p>
-            <input
-              type="text"
-              name="IVA"
-              id="iva"
-              placeholder="Responsable inscripto"
-              required
-            />
-            <p class="oculto">OCULTO</p>
+          <div>
             <p>Nombre de fantasía:</p>
             <input
               type="text"
               name="NOMBRE"
               id="nombre"
               placeholder="Núcleo IT"
+              minlength="3"
               required
             />
-            <p>Dirección:</p>
+            <p>Dirección <span>(calle y altura)</span>:</p>
             <input
               type="text"
               name="DIRECCION"
               id="dire"
               placeholder="Lavalle 1783"
               required
+              minlength="4"
             />
             <p>Localidad:</p>
             <input
@@ -235,16 +58,36 @@
               required
             />
             <p>Provincia:</p>
-            <input
-              type="text"
-              name="PROVINCIA"
-              id="prov"
-              placeholder="Buenos Aires"
-              required
-            />
+            <select name="PROVINCIA" id="prov" required>
+              <option value="0">Seleccionar...</option>
+              <option value="Buenos Aires">Buenos Aires</option>
+              <option value="CABA">Ciudad Autonoma de Bs. As.</option>
+              <option value="Catamarca">Catamarca</option>
+              <option value="Chaco">Chaco</option>
+              <option value="Chubut">Chubut</option>
+              <option value="Cordoba">Cordoba</option>
+              <option value="Corrientes">Corrientes</option>
+              <option value="Entre Rios">Entre Rios</option>
+              <option value="Formosa">Formosa</option>
+              <option value="Jujuy">Jujuy</option>
+              <option value="La Pampa">La Pampa</option>
+              <option value="La Rioja">La Rioja</option>
+              <option value="Mendoza">Mendoza</option>
+              <option value="Misiones">Misiones</option>
+              <option value="Neuquen">Neuquen</option>
+              <option value="Rio Negro">Rio Negro</option>
+              <option value="Salta">Salta</option>
+              <option value="San Juan">San Juan</option>
+              <option value="San Luis">San Luis</option>
+              <option value="Santa Cruz">Santa Cruz</option>
+              <option value="Santa Fe">Santa Fe</option>
+              <option value="Santiago del Estero">Santiago del Estero</option>
+              <option value="Tierra del Fuego">Tierra del Fuego</option>
+              <option value="Tucuman">Tucuman</option>
+              </select>
             <p>Teléfono del local:</p>
             <input
-              type="text"
+              type="number"
               name="TELLOCAL"
               id="tellocal"
               placeholder="(011) 5263-0039"
@@ -254,13 +97,13 @@
             />
             <p>Celular del local:</p>
             <input
-              type="text"
+              type="number"
               name="CELLOCAL"
               id="cellocal"
               placeholder="(011) 3277-7917"
-              required
               minlength="10"
               maxlength="10"
+              required
             />
             <p>Mail del local:</p>
             <input
@@ -271,8 +114,45 @@
               required
             />
             <p>Instagram:</p>
-            <input type="text" name="IG" id="ig" placeholder="/nucleoit" required/>
-            <p class="oculto">OCULTO</p>
+            <input
+              type="text"
+              name="IG"
+              id="ig"
+              placeholder="/nucleoit"
+              required
+            />
+          </div>
+          <div>
+            <p>Razón Social:</p>
+            <input
+              type="text"
+              name="RS"
+              id="rs"
+              placeholder="Nucleo IT S.R.L."
+              required
+            />
+            <p>CUIT <span>(sin guiones)</span>:</p>
+            <input
+              type="number"
+              name="CUIT"
+              id="cuit"
+              placeholder="99-99999999-9"
+              minlength="11"
+              maxlength="11"
+              required
+            />
+            <p>Condición frente al IVA:</p>
+            <select name="IVA" id="iva" required>
+              <option value="0">Seleccionar...</option>
+              <option value="Responsable Inscripto">
+                Responsable Inscripto
+              </option>
+              <option value="Monotributista">Monotributista</option>
+              <option value="Exento">Exento</option>
+            </select>
+          </div>
+
+          <div>
             <p>Nombre de conctacto:</p>
             <input
               type="text"
@@ -283,7 +163,7 @@
             />
             <p>Celular de contacto:</p>
             <input
-              type="text"
+              type="number"
               name="CELCONTACTO"
               id="celcontacto"
               placeholder="(011) 3277-7917"
@@ -300,18 +180,40 @@
               required
             />
           </div>
+          <div>
+            <p>Razón Social:</p>
+            <input
+              type="text"
+              name="RS"
+              id="rs"
+              placeholder="Nucleo IT S.R.L."
+              required
+            />
+          </div>
         </div>
         <div class="botonenvio">
           <input
             id="enviar"
             type="submit"
             value="Enviar"
-            onclick=enviarinfo(1)
+            onclick="enviarinfo(1)"
           />
         </div>
       </form>
     </section>
     <footer></footer>
     <script type="text/javascript" src="../js/javascript.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      Swal.fire({
+        text: "Al finalizar el formulario será redireccionado a whatsapp",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+    </script>
   </body>
 </html>
