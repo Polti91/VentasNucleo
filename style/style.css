@@ -45,7 +45,6 @@ header h1 {
 
 section {
   background-color: #ffffff;
-  min-width: 300px;
   flex-direction: column;
   justify-content: center;
   margin: 15%;
