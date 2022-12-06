@@ -19,12 +19,17 @@ function enviarinfo(v){
     var nombrecontacto=document.getElementById("namecontacto").value;
     var celcontacto=document.getElementById("celcontacto").value;
     var mailcontacto=document.getElementById("mailcontacto").value;
-    let name = "Hola Henry! Te envio mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit:* "+cuit+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasia:* "+nombre+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Mail del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Mail del contacto:* "+mailcontacto;
+    var name = "";
     var cuit1=cuit.slice(0, 2);
     var cuit2=cuit.slice(2, 10);
     var cuit3=cuit.slice(10, 11);
     let cuit4 = cuit1+"-"+cuit2+"-"+cuit3;
-
+    if (tellocal=="") {
+      tellocal = "No asignado";
+    }
+    if (cellocal=="") {
+      cellocal = "No asignado";
+    }
 
     function esCUITValida(inputValor) {
       inputString = inputValor.toString()
@@ -44,7 +49,7 @@ function enviarinfo(v){
 
 
 
-    if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || tellocal=="" || cellocal=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
+    if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
     
         Swal.fire({
           icon: 'error',
@@ -59,7 +64,7 @@ function enviarinfo(v){
         text: 'Debe seleccionar la condición ante el IVA.',
       }) 
     }
-    else if(tellocal.length<10 || cellocal.length<10  || celcontacto.length<10 ){
+    else if((tellocal.length<10 && tellocal.length>0) || (cellocal.length<10 && cellocal.length>0)  || celcontacto.length<10 ){
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -87,14 +92,8 @@ function enviarinfo(v){
         text: 'CUIT Inválido',
         footer: 'Recuerde no usar tildes'
       })  
-    }else if (tellocal.length<10 || cellocal.length<10 || celcontacto.length<10){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Revise los valores asignados en las lenguetas.',
-      }) 
     }
-    else{
+       else{
       Swal.fire({
         position: 'center',
         icon: 'success',
