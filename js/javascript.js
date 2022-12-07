@@ -60,18 +60,28 @@ function enviarinfo(v){
     }
   }
 
-
-
-
-
-
-    if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" ||  nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
+    if (nombre=='HenryUp'){
+      Swal.fire({
+        title: 'Podemos hacernos grandes o hacernos miserales',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://media.tenor.com/E6bTNFTSsWIAAAAj/john-travolta.gif")
+          center top
+          no-repeat
+        `
+      }) 
+    }
+    else if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" ||  nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
     
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Debes completar todos los campos',
-        }) 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debes completar todos los campos',
+      })
     }
     else if(ig==""){
         Swal.fire({
