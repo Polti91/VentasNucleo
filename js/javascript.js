@@ -9,6 +9,7 @@ function enviarinfo(v){
     var cuit=document.getElementById("cuit").value;
     var iva=document.getElementById("iva").value;
     var nombre=document.getElementById("nombre").value;
+    var rubro=document.getElementById("rubro").value;
     var direccion=document.getElementById("dire").value;
     var localidad=document.getElementById("loca").value;
     var provincia=document.getElementById("prov").value;
@@ -30,7 +31,11 @@ function enviarinfo(v){
     if (cellocal=="") {
       cellocal = "No asignado";
     }
+    if (maillocal=="") {
+      maillocal = "No asignado";
+    }
 
+    //Funcion valida CUIT
     function esCUITValida(inputValor) {
       inputString = inputValor.toString()
       if (inputString.length == 11) {
@@ -45,32 +50,61 @@ function enviarinfo(v){
       }
       return false
   }
+  //Funcion valida email
+  function validarEmail(valor) {
+    re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+    if (re.exec(valor)){
+    return true
+    } else {
+    return false
+    }
+  }
 
-
-
-
-    if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" || maillocal=="" || ig=="" || nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
+    if (nombre=='HenryUp'){
+      Swal.fire({
+        title: 'Podemos hacernos grandes o hacernos miserales',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://media.tenor.com/E6bTNFTSsWIAAAAj/john-travolta.gif")
+          center top
+          no-repeat
+        `
+      }) 
+    }
+    else if (razonsocial.length=="" || cuit=="" || nombre=="" || direccion=="" || localidad=="" || provincia=="" ||  nombrecontacto=="" || celcontacto=="" || mailcontacto==""){
     
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debes completar todos los campos',
+      })
+    }
+    else if(ig==""){
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Debes completar todos los campos',
+          text: 'Debe ingresar una cuenta de instagram o especificar si no cuentan con alguna',
         }) 
     }
     else if(iva=="0"){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Debe seleccionar la condición ante el IVA.',
-      }) 
+      
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Debe seleccionar la condición ante el IVA.',
+        }) 
     }
-    else if((tellocal.length<10 && tellocal.length>0) || (cellocal.length<10 && cellocal.length>0)  || celcontacto.length<10 ){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Debe introducir un número de telefono válido. Ej: 11 12346789',
-        footer: 'Ej: 11 12349876'
-      })
+    else if((tellocal.length<10) && (tellocal.length>0) || (cellocal.length<10 && cellocal.length>0)  || celcontacto.length<10 ){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Debe introducir un número de telefono válido. Ej: 11 12346789',
+          footer: 'Ej: 11 12349876'
+        })
     }
     else if(prov=="0"){
         Swal.fire({
@@ -78,14 +112,24 @@ function enviarinfo(v){
           title: 'Oops...',
           text: 'Debe seleccionar una provincia',
         })
-    }else if(!maillocal.includes("@") || !mailcontacto.includes("@") || !maillocal.includes(".") || !mailcontacto.includes(".")){ 
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'El formato del mail es incorrecto.',
-        footer: 'El formato debe ser similar a mi_mail@ejemplo.com'
-      }) 
-    } else if (esCUITValida(cuit) == false){
+    }
+    else if(validarEmail(mailcontacto)==false){  
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'El formato del email de contacto es incorrecto.',
+          footer: 'El formato debe ser similar a mi_mail@ejemplo.com'
+        }) 
+      }
+    else if(maillocal !="No asignado" && validarEmail(maillocal)==false){  
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'El formato del email del local es incorrecto.',
+          footer: 'El formato debe ser similar a mi_mail@ejemplo.com'
+        }) 
+    }
+    else if (esCUITValida(cuit) == false){
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -93,7 +137,7 @@ function enviarinfo(v){
         footer: 'Recuerde no usar tildes'
       })  
     }
-       else{
+    else{
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -102,9 +146,10 @@ function enviarinfo(v){
         timer: 1500
       })
       if (v==1) {
-        name = "Hola Henry! Te envio mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasia:* "+nombre+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Mail del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Mail del contacto:* "+mailcontacto;       
+        name = "Hola Henry! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
         setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5491164224270&text='+name, '_blank')
-      } else if (v==2) {
+      } 
+      else if (v==2) {
         name = "Hola Rafael! Te envio mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasia:* "+nombre+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Mail del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Mail del contacto:* "+mailcontacto;
         
         window.open('https://api.whatsapp.com/send?phone=5492235419261&text='+name, '_blank');
