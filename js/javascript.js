@@ -53,7 +53,7 @@ function enviarinfo(v){
   //Funcion valida email
   function validarEmail(valor) {
     re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-    if (re.exec(valor)){
+    if (re.exec(valor.toLowerCase())){
     return true
     } else {
     return false
