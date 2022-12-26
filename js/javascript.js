@@ -67,6 +67,17 @@ function enviarinfo(v){
         padding: '3em',
         color: '#716add',
         background: '#fff url(/images/trees.png)',
+        showDenyButton: true,
+  showCancelButton: true,
+        confirmButtonText: 'Hacernos fuertes',
+        denyButtonText: `Hacernos miserables`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    Swal.fire('Te hiciste fuerte! La cantidad de trabajo es la misma.', '', 'success')
+  } else if (result.isDenied) {
+    Swal.fire('Te hiciste miserable :(. La cantidad de trabajo es la misma.', '', 'info')
+  }
         backdrop: `
           rgba(0,0,123,0.4)
           url("https://media.tenor.com/E6bTNFTSsWIAAAAj/john-travolta.gif")
@@ -167,7 +178,7 @@ function enviarinfo(v){
       } 
       else if (v==6) {
         name = "Hola José! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
-        setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=54911&text='+name, '_blank')
+        setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5493813361333&text='+name, '_blank')
       } 
       else if (v==7) {
         name = "Hola Juani! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
