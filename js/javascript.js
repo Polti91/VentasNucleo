@@ -158,7 +158,10 @@ function enviarinfo(v){
       })
       if (v==1) {
         name = "Hola Henry! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
-        setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5491164224270&text='+name, '_blank')
+        
+        setTimeout(() => {
+          window.open('https://api.whatsapp.com/send?phone=5491164224270&text='+name, '_blank');
+      })
       } 
       else if (v==2) {
         name = "Hola Mica! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
