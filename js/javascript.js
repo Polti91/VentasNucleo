@@ -15,15 +15,18 @@ function enviarinfo(v){
     var provincia=document.getElementById("prov").value;
     var tellocal=document.getElementById("tellocal").value;
     var cellocal=document.getElementById("cellocal").value;
-    var maillocal=document.getElementById("maillocal").value;
+    var maillocaldata=document.getElementById("maillocal").value;
+    var maillocal = maillocaldata.toLowerCase();
     var ig=document.getElementById("ig").value;
     var nombrecontacto=document.getElementById("namecontacto").value;
     var celcontacto=document.getElementById("celcontacto").value;
-    var mailcontacto=document.getElementById("mailcontacto").value;
+    var mailcontactodata=document.getElementById("mailcontacto").value;
+    var mailcontacto = mailcontactodata.toLowerCase();
     var name = "";
     var cuit1=cuit.slice(0, 2);
     var cuit2=cuit.slice(2, 10);
     var cuit3=cuit.slice(10, 11);
+    console.log(mailcontacto)
     let cuit4 = cuit1+"-"+cuit2+"-"+cuit3;
     if (tellocal=="") {
       tellocal = "No asignado";
