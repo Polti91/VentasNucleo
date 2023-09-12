@@ -15,15 +15,18 @@ function enviarinfo(v){
     var provincia=document.getElementById("prov").value;
     var tellocal=document.getElementById("tellocal").value;
     var cellocal=document.getElementById("cellocal").value;
-    var maillocal=document.getElementById("maillocal").value;
+    var maillocaldata=document.getElementById("maillocal").value;
+    var maillocal = maillocaldata.toLowerCase();
     var ig=document.getElementById("ig").value;
     var nombrecontacto=document.getElementById("namecontacto").value;
     var celcontacto=document.getElementById("celcontacto").value;
-    var mailcontacto=document.getElementById("mailcontacto").value;
+    var mailcontactodata=document.getElementById("mailcontacto").value;
+    var mailcontacto = mailcontactodata.toLowerCase();
     var name = "";
     var cuit1=cuit.slice(0, 2);
     var cuit2=cuit.slice(2, 10);
     var cuit3=cuit.slice(10, 11);
+    console.log(mailcontacto)
     let cuit4 = cuit1+"-"+cuit2+"-"+cuit3;
     if (tellocal=="") {
       tellocal = "No asignado";
@@ -177,8 +180,8 @@ function enviarinfo(v){
         setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5493516140055&text='+name, '_blank')
       } 
       else if (v==6) {
-        name = "Hola José! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
-        setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5493813361333&text='+name, '_blank')
+        name = "Hola Nico! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
+        setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5493765061010&text='+name, '_blank')
       } 
       else if (v==7) {
         name = "Hola Juani! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto;       
