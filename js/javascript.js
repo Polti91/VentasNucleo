@@ -21,6 +21,7 @@ function enviarinfo(v){
     var nombrecontacto=document.getElementById("namecontacto").value;
     var celcontacto=document.getElementById("celcontacto").value;
     var mailcontactodata=document.getElementById("mailcontacto").value;
+    var admincheck=document.getElementById("admincheck").value;
     var mailcontacto = mailcontactodata.toLowerCase();
     var name = "";
     var cuit1=cuit.slice(0, 2);
@@ -36,6 +37,8 @@ function enviarinfo(v){
     }
     if (maillocal=="") {
       maillocal = "No asignado";
+    }if (admincheck=="") {
+      admincheck = "No asignado";
     }
 
     //Funcion valida CUIT
@@ -160,7 +163,7 @@ function enviarinfo(v){
         timer: 1500
       })
       if (v==1) {
-        name = "Hola Henry! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto+"*Email Usuario Administrador Núcleo Check:* "+admincheck;       
+        name = "Hola Henry! Te envío mis datos de registro:%0A"+today.toLocaleString()+"%0A%0A"+"*Razón social:* "+razonsocial+"%0A"+"*Cuit/Cuil:* "+cuit4+"%0A"+"*Condición frente al IVA:* "+iva+"%0A"+"*Nombre de fantasía:* "+nombre+"%0A"+"*Rubros:* "+rubro+"%0A"+"*Dirección:* "+direccion+"%0A"+"*Localidad:* "+localidad+"%0A"+"*Provincia:* "+provincia+"%0A"+"*Tel. del local:* "+tellocal+"%0A"+"*Cel. del local:* "+cellocal+"%0A"+"*Email del local:* "+maillocal+"%0A"+"*Instagram (IG) del local:* "+ig+"%0A"+"*Nombre de la persona de contacto:* "+nombrecontacto+"%0A"+"*Celular de la persona de contacto:* "+celcontacto+"%0A"+"*Email del contacto:* "+mailcontacto+"%0A"+"*Email Usuario Administrador Núcleo Check:* "+admincheck;       
         setTimeout(window.open, 2000, 'https://api.whatsapp.com/send?phone=5491164224270&text='+name, '_blank')
       } 
       else if (v==2) {
