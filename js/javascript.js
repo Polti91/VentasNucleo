@@ -37,6 +37,8 @@ function enviarinfo(v){
     }
     if (maillocal=="") {
       maillocal = "No asignado";
+    }if (admincheck=="") {
+      admincheck = "No asignado";
     }
 
     //Funcion valida CUIT
